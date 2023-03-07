@@ -18,6 +18,8 @@ final class ImageTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
+    private var dataTask: URLSessionDataTask?
+    
     @IBOutlet private var titleLabel: UILabel!
     
     // MARK: -
@@ -33,30 +35,27 @@ final class ImageTableViewCell: UITableViewCell {
         print(Date())
         print(Thread.isMainThread)
         
-        // old locking code
-//        // Load Data
-//        if let url = url, let data = try? Data(contentsOf: url) {
-//            // Configure Thumbnail Image View
-//            thumbnailImageView.image = UIImage(data: data)
-//        }
-        
-        // fixed code
         // Load Data
         if let url = url {
-            DispatchQueue.global(qos: .background).async {
-                if let data = try? Data(contentsOf: url) {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        self.thumbnailImageView.image = image
-                    }
+            let dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, _) in
+                guard let data = data else { return }
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self?.thumbnailImageView.image = image
                 }
             }
+            dataTask.resume()
+            
+            self.dataTask = dataTask
         }
         
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        dataTask?.cancel()
+        dataTask = nil
         
         // Reset Thumnail Image View
         thumbnailImageView.image = nil
