@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67E4728B29B7755700CC6AB4 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4728A29B7755700CC6AB4 /* UIImage.swift */; };
 		CC2B2B242110B3B500EBB96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B2B232110B3B500EBB96F /* AppDelegate.swift */; };
 		CC2B2B292110B3B500EBB96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC2B2B272110B3B500EBB96F /* Main.storyboard */; };
 		CC2B2B2B2110B3B600EBB96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2B2B2A2110B3B600EBB96F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67E4728A29B7755700CC6AB4 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CC2B2B202110B3B500EBB96F /* Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2B2B232110B3B500EBB96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC2B2B282110B3B500EBB96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,9 +39,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67E4728929B7753A00CC6AB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67E4728A29B7755700CC6AB4 /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CC2B2B172110B3B500EBB96F = {
 			isa = PBXGroup;
 			children = (
+				67E4728929B7753A00CC6AB4 /* Extensions */,
 				CC2B2B222110B3B500EBB96F /* Images */,
 				CC2B2B212110B3B500EBB96F /* Products */,
 			);
@@ -187,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2B2B382110B40600EBB96F /* ImageTableViewCell.swift in Sources */,
+				67E4728B29B7755700CC6AB4 /* UIImage.swift in Sources */,
 				CC2B2B362110B3EE00EBB96F /* ImagesViewController.swift in Sources */,
 				CC2B2B242110B3B500EBB96F /* AppDelegate.swift in Sources */,
 			);
